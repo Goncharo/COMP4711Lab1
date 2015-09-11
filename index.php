@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+First Lab Exercise.
+
+Dima Goncharov, A00885037
 -->
 <html>
     <head>
@@ -14,8 +14,9 @@ and open the template in the editor.
         
         include('Student.php');
         
-        $students = array();
+        $students = array(); //array for holding students
         
+        //initialize and add first student to array
         $first = new Student();
         $first->surname = "Doe";
         $first->first_name = "John";
@@ -26,6 +27,7 @@ and open the template in the editor.
         $first->add_grade(55);
         $students['j123'] = $first;
         
+        //initialize and add second student to array
         $second = new Student();
         $second->surname = "Einstein";
         $second->first_name = "Albert";
@@ -37,15 +39,23 @@ and open the template in the editor.
         $second->add_grade(50);
         $students['a456'] = $second;
         
+        //initialize and add third student to array
+        $third = new Student();
+        $third->surname = "Goncharov";
+        $third->first_name = "Dima";
+        $third->add_email('work','suicide_party@bcit.com');
+        $third->add_grade(100);
+        $third->add_grade(100);
+        $students['d008'] = $third;
         
         
+        //sort student array by key
+        ksort($students);
         
-
+        //prints each student out using toString() method
         foreach($students as $student)
             echo $student->toString();
-
-        
-        
+ 
         ?>
     </body>
 </html>
